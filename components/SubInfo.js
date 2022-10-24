@@ -68,7 +68,7 @@ export const EndDate = () =>{
                 fontSize: SIZES.small,
                 color: COLORS.primary
             }}>
-            Ending in</Text>
+            Finalizando em</Text>
             <Text style={{
                 fontFamily: FONTS.semiBold,
                 fontSize: SIZES.medium,
