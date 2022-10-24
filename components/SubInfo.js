@@ -1,20 +1,26 @@
 import { View, Text,Image } from "react-native"
-import { SIZES, FONTS, COLORS, assets } from "../constants"
+import { SIZES, FONTS, COLORS, assets, SHADOWS } from "../constants"
 
 
-export const NFTTitle = () =>{
+export const NFTTitle = ({title, subTitle, titleSize, subTitleSize}) =>{
     return(
         <View>
-            <Text>NFTTitle</Text>
+            <Text style={{fontFamily: FONTS.semiBold, fontSize: titleSize, color: COLORS.primary}}>{title}</Text>
+            <Text style={{fontFamily: FONTS.regular, fontSize: subTitleSize, color: COLORS.primary}}>{subTitle}</Text>
         </View>
     )
 }
 
 
-export const EthPrice = () =>{
+export const EthPrice = ({price}) =>{
     return(
-        <View>
-            <Text>EthPrice</Text>
+        <View style={{flexDirection:"row", alignItems: "center"}}>
+            <Image
+            source={assets.eth}
+            resizeMode="contain"
+            style={{width:20, height:20, marginRight:2}}
+            />
+            <Text styles={{fontFamily: FONTS.medium, fontSize: SIZES.font, color: COLORS.primary }}>{price}</Text>
         </View>
     )
 }
@@ -49,10 +55,26 @@ export const EndDate = () =>{
         style={{
             paddingHorizontal:SIZES.font,
             paddingVertical:SIZES.base,
-            backgroundColor: COLORS.white
+            backgroundColor: COLORS.white,
+            justifyContent:"center",
+            alignItems:"center",
+            ...SHADOWS.light,
+            elevation:1,
+            maxWidth:"50%"
         }}
         >
-            <Text>EndDate</Text>
+            <Text style={{
+                fontFamily: FONTS.regular,
+                fontSize: SIZES.small,
+                color: COLORS.primary
+            }}>
+            Ending in</Text>
+            <Text style={{
+                fontFamily: FONTS.semiBold,
+                fontSize: SIZES.medium,
+                color: COLORS.primary
+            }}>
+            12h 30m</Text>
         </View>
     )
 }
