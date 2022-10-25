@@ -1,13 +1,13 @@
-import { TouchableOpacity, View, Text, Image } from "react-native"
+import { TouchableOpacity, Text, Image } from "react-native"
 
 import { COLORS, SIZES, FONTS, SHADOWS, } from "../constants"
 
 export const CircleButton =({imgUrl, handlePress, ...props})=>{
     return(
         <TouchableOpacity 
-        styles={{
+        style={{
             width:40,
-            heigth:40,
+            height:40,
             backgroundColor: COLORS.white,
             position: "absolute",
             borderRadius: SIZES.extraLarge,
@@ -21,7 +21,7 @@ export const CircleButton =({imgUrl, handlePress, ...props})=>{
         >
             <Image source={imgUrl} 
             resizeMode="contain"
-            style={{width:24, heigth:24}}
+            style={{width:24, height:24}}
             />
         </TouchableOpacity>
     )
@@ -46,7 +46,7 @@ export const RectButton =({minWidth, fontSize, handlePress, ...props})=>{
                 color: COLORS.white,
                 textAlign: "center"
               }}
-              >Dar um lance</Text>
+              >Dar um Lance</Text>
         </TouchableOpacity>
     )
 }
